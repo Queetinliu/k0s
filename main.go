@@ -28,6 +28,7 @@ import (
 //go:generate make generate-bindata
 
 func init() {
+	//初始化首先设置日志格式
 	logrus.SetOutput(os.Stderr)
 	logrus.SetLevel(logrus.WarnLevel)
 	customFormatter := new(logrus.TextFormatter)
