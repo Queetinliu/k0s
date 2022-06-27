@@ -237,7 +237,7 @@ func DefaultClusterSpec(defaultStorage ...*StorageSpec) *ClusterSpec {
 		Install:           DefaultInstallSpec(),  //pkg/apis/k0s.k0sproject.io/v1beta1/system.go
 		Images:            DefaultClusterImages(), //pkg/apis/k0s.k0sproject.io/v1beta1/images.go
 		Telemetry:         DefaultClusterTelemetry(), //pkg/apis/k0s.k0sproject.io/v1beta1/telemetry.go
-		Konnectivity:      DefaultKonnectivitySpec(),
+		Konnectivity:      DefaultKonnectivitySpec(), //pkg/apis/k0s.k0sproject.io/v1beta1/konnectivity.go
 	}
 }
 
