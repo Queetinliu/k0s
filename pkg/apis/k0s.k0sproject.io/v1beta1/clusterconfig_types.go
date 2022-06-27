@@ -162,7 +162,7 @@ func (s *SchedulerSpec) IsZero() bool {
 
 func ConfigFromString(yml string, defaultStorage ...*StorageSpec) (*ClusterConfig, error) {
 	config := DefaultClusterConfig(defaultStorage...)  //这个方法在下面，获取默认配置
-	err := strictyaml.YamlUnmarshalStrictIgnoringFields([]byte(yml), config, "interval")
+	err := strictyaml.YamlUnmarshalStrictIgnoringFields([]byte(yml), config, "interval")  //pkg/strictyaml/strictyaml.go，转换yaml
 	if err != nil {
 		return config, err
 	}
