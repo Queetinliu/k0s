@@ -175,6 +175,7 @@ func GetConfig(dataDir string) CfgVars {
 	winCertDir := WinDataDirDefault + "\\pki" // hacky but we need it to be windows style even on linux machine
 	helmHome := formatPath(dataDir, "helmhome")
        //返回配置参数
+	//formatPath同样见于pkg/constant/constant_posix.go和pkg/constant/constant_windos.go定义
 	return CfgVars{
 		AdminKubeConfigPath:        formatPath(certDir, "admin.conf"),
 		BinDir:                     formatPath(dataDir, "bin"),
