@@ -227,9 +227,9 @@ func DefaultClusterSpec(defaultStorage ...*StorageSpec) *ClusterSpec {
 	}
 
 	return &ClusterSpec{
-		Extensions:        DefaultExtensions(),
+		Extensions:        DefaultExtensions(),  //方法定义在pkg/apis/k0s.k0sproject.io/v1beta1/extensions.go
 		Storage:           storage,
-		Network:           DefaultNetwork(),
+		Network:           DefaultNetwork(),  //方法定义在pkg/apis/k0s.k0sproject.io/v1beta1/network.go
 		API:               DefaultAPISpec(),
 		ControllerManager: DefaultControllerManagerSpec(),
 		Scheduler:         DefaultSchedulerSpec(),
