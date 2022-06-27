@@ -234,7 +234,7 @@ func DefaultClusterSpec(defaultStorage ...*StorageSpec) *ClusterSpec {
 		ControllerManager: DefaultControllerManagerSpec(), //pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go
 		Scheduler:         DefaultSchedulerSpec(),  //pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go
 		PodSecurityPolicy: DefaultPodSecurityPolicy(), //pkg/apis/k0s.k0sproject.io/v1beta1/psp.go
-		Install:           DefaultInstallSpec(),
+		Install:           DefaultInstallSpec(),  //pkg/apis/k0s.k0sproject.io/v1beta1/system.go
 		Images:            DefaultClusterImages(),
 		Telemetry:         DefaultClusterTelemetry(),
 		Konnectivity:      DefaultKonnectivitySpec(),
