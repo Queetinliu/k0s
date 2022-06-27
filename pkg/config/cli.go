@@ -286,8 +286,8 @@ func getNodeConfig(k0sVars constant.CfgVars) *v1beta1.ClusterConfig {
 }
 
 func getClusterConfig(k0sVars constant.CfgVars) *v1beta1.ClusterConfig {
-	loadingRules := ClientConfigLoadingRules{K0sVars: k0sVars}
-	cfg, err := loadingRules.Load()
+	loadingRules := ClientConfigLoadingRules{K0sVars: k0sVars}  //pkg/config/config.go中定义
+	cfg, err := loadingRules.Load()  
 	if err != nil {
 		return nil
 	}
