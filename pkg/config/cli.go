@@ -206,7 +206,7 @@ func FileInputFlag() *pflag.FlagSet {
 }
 
 func GetCmdOpts() CLIOptions {
-	K0sVars = constant.GetConfig(DataDir)  //constant中的constant_shared.go的方法
+	K0sVars = constant.GetConfig(DataDir)  //constant中的constant_shared.go的方法，获取k8s的各个参数
 
 	if controllerOpts.SingleNode {
 		controllerOpts.EnableWorker = true
