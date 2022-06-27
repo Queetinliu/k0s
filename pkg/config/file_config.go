@@ -138,7 +138,7 @@ func (rules *ClientConfigLoadingRules) ParseRuntimeConfig() (*v1beta1.ClusterCon
 		}
 		return nil, fmt.Errorf(strings.Join(messages, "\n"))
 	}
-	return cfg, nil
+	return cfg, nil //验证合法性后得到配置
 }
 
 // generate default config and return the config object
