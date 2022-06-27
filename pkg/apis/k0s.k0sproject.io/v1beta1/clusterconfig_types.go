@@ -231,8 +231,8 @@ func DefaultClusterSpec(defaultStorage ...*StorageSpec) *ClusterSpec {
 		Storage:           storage,
 		Network:           DefaultNetwork(),  //方法定义在pkg/apis/k0s.k0sproject.io/v1beta1/network.go
 		API:               DefaultAPISpec(), //方法定义在pkg/apis/k0s.k0sproject.io/v1beta1/api.go
-		ControllerManager: DefaultControllerManagerSpec(),
-		Scheduler:         DefaultSchedulerSpec(),
+		ControllerManager: DefaultControllerManagerSpec(), //pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go
+		Scheduler:         DefaultSchedulerSpec(),  //pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go
 		PodSecurityPolicy: DefaultPodSecurityPolicy(),
 		Install:           DefaultInstallSpec(),
 		Images:            DefaultClusterImages(),
