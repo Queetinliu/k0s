@@ -188,7 +188,7 @@ func GetConfig(dataDir string) CfgVars {
 		KonnectivitySocketDir:      formatPath(runDir, "konnectivity-server"),
 		KubeletAuthConfigPath:      formatPath(dataDir, "kubelet.conf"),
 		KubeletBootstrapConfigPath: formatPath(dataDir, "kubelet-bootstrap.conf"),
-		KubeletVolumePluginDir:     KubeletVolumePluginDir,
+		KubeletVolumePluginDir:     KubeletVolumePluginDir,//这个常量同样见于上面的定义
 		ManifestsDir:               formatPath(dataDir, "manifests"),
 		RunDir:                     runDir,
 		KonnectivityKubeConfigPath: formatPath(certDir, "konnectivity.conf"),
