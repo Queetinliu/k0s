@@ -150,11 +150,11 @@ type CfgVars struct {
 // GetConfig returns the pointer to a Config struct
 func GetConfig(dataDir string) CfgVars {
 	if dataDir == "" {
-		switch runtime.GOOS {
+		switch runtime.GOOS {      //根据不同的系统，定义不同的目录
 		case "windows":
 			dataDir = WinDataDirDefault
 		default:
-			dataDir = DataDirDefault
+			dataDir = DataDirDefault  //这个常量定义在constant/constant_posix.go 中
 		}
 	}
 
@@ -164,16 +164,17 @@ func GetConfig(dataDir string) CfgVars {
 		panic(err)
 	}
 
-	var runDir string
+	var runDir string              //根据当前账号，定义不同的目录
 	if os.Geteuid() == 0 {
-		runDir = "/run/k0s"
+		runDir = "/run/k0s"   
 	} else {
 		runDir = formatPath(dataDir, "run")
 	}
+	//定义cert及helm目录
 	certDir := formatPath(dataDir, "pki")
 	winCertDir := WinDataDirDefault + "\\pki" // hacky but we need it to be windows style even on linux machine
 	helmHome := formatPath(dataDir, "helmhome")
-
+       //返回配置参数
 	return CfgVars{
 		AdminKubeConfigPath:        formatPath(certDir, "admin.conf"),
 		BinDir:                     formatPath(dataDir, "bin"),
