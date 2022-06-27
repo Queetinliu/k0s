@@ -49,7 +49,7 @@ func (rules *ClientConfigLoadingRules) InitRuntimeConfig(k0sVars constant.CfgVar
 // readRuntimeConfig returns the configuration from the runtime configuration file
 func (rules *ClientConfigLoadingRules) readRuntimeConfig() (clusterConfig *v1beta1.ClusterConfig, err error) {
 	if rules.RuntimeConfigPath == "" {
-		rules.RuntimeConfigPath = runtimeConfigPathDefault
+		rules.RuntimeConfigPath = runtimeConfigPathDefault  //runtimeConfigPathDefault定义在pkg/config/file_config.go
 	}
 	return rules.ParseRuntimeConfig()
 }
