@@ -183,7 +183,7 @@ func ConfigFromReader(r io.Reader, defaultStorage ...*StorageSpec) (*ClusterConf
 
 // DefaultClusterConfig sets the default ClusterConfig values, when none are given
 func DefaultClusterConfig(defaultStorage ...*StorageSpec) *ClusterConfig {
-	clusterSpec := DefaultClusterSpec(defaultStorage...)
+	clusterSpec := DefaultClusterSpec(defaultStorage...)  //方法定义在下面
 	return &ClusterConfig{
 		ObjectMeta: metav1.ObjectMeta{Name: "k0s"},
 		TypeMeta: metav1.TypeMeta{
