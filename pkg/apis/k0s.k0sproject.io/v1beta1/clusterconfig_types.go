@@ -161,7 +161,7 @@ func (s *SchedulerSpec) IsZero() bool {
 }
 
 func ConfigFromString(yml string, defaultStorage ...*StorageSpec) (*ClusterConfig, error) {
-	config := DefaultClusterConfig(defaultStorage...)
+	config := DefaultClusterConfig(defaultStorage...)  //这个方法在下面，获取默认配置
 	err := strictyaml.YamlUnmarshalStrictIgnoringFields([]byte(yml), config, "interval")
 	if err != nil {
 		return config, err
@@ -178,7 +178,7 @@ func ConfigFromReader(r io.Reader, defaultStorage ...*StorageSpec) (*ClusterConf
 	if err != nil {
 		return nil, err
 	}
-	return ConfigFromString(string(input), defaultStorage...)
+	return ConfigFromString(string(input), defaultStorage...) //方法在上面 
 }
 
 // DefaultClusterConfig sets the default ClusterConfig values, when none are given
