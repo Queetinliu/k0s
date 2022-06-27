@@ -109,7 +109,7 @@ func (rules *ClientConfigLoadingRules) IsDefaultConfig() bool {
 
 func (rules *ClientConfigLoadingRules) Load() (*v1beta1.ClusterConfig, error) {
 	if rules.Nodeconfig {
-		return rules.fetchNodeConfig()
+		return rules.fetchNodeConfig()  //见pkg/config/api_config.go的定义
 	}
 	if !rules.IsAPIConfig() {
 		return rules.readRuntimeConfig()
