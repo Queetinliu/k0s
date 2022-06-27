@@ -59,9 +59,9 @@ func (rules *ClientConfigLoadingRules) readRuntimeConfig() (clusterConfig *v1bet
 // ParseRuntimeConfig parses the `--config` flag and generates a config object
 // it searches for the default config path. if it does not exist, and no other custom config-file is given, it will generate default config
 func (rules *ClientConfigLoadingRules) ParseRuntimeConfig() (*v1beta1.ClusterConfig, error) {
-	var cfg *v1beta1.ClusterConfig
+	var cfg *v1beta1.ClusterConfig  //见pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go中定义
 
-	var storage *v1beta1.StorageSpec
+	var storage *v1beta1.StorageSpec  //见pkg/apis/k0s.k0sproject.io/v1beta1/
 	if rules.K0sVars.DefaultStorageType == "kine" {
 		storage = &v1beta1.StorageSpec{
 			Type: v1beta1.KineStorageType,
