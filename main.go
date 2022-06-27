@@ -45,5 +45,5 @@ func main() {
 		os.Args = append([]string{"k0s", progN}, os.Args[1:]...)
 	}
 
-	cmd.Execute()
+	cmd.Execute()  //cmd包中的root.go
 }
