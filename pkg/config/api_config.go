@@ -60,12 +60,12 @@ func (rules *ClientConfigLoadingRules) getConfigFromAPI(client k0sv1beta1.K0sV1b
 
 // when API config is enabled, but only node config is needed (for bootstrapping commands)
 func (rules *ClientConfigLoadingRules) fetchNodeConfig() (*v1beta1.ClusterConfig, error) {
-	cfg, err := rules.readRuntimeConfig()  
+	cfg, err := rules.readRuntimeConfig() //见于pkg/config/file_config.go中方法，读取配置
 	if err != nil {
 		logrus.Errorf("failed to read config from file: %v", err)
 		return nil, err
 	}
-	return cfg.GetBootstrappingConfig(cfg.Spec.Storage), nil
+	return cfg.GetBootstrappingConfig(cfg.Spec.Storage), nil 
 }
 
 // when API config is enabled, but only node config is needed (for bootstrapping commands)
