@@ -184,7 +184,7 @@ func GetConfig(dataDir string) CfgVars {
 		DataDir:                    dataDir,
 		EtcdCertDir:                formatPath(certDir, "etcd"),
 		EtcdDataDir:                formatPath(dataDir, "etcd"),
-		KineSocketPath:             formatPath(runDir, KineSocket),
+		KineSocketPath:             formatPath(runDir, KineSocket),  //KineSocket见于pkg/constant/constant_posix.go和pkg/constant/constant_windos.go定义
 		KonnectivitySocketDir:      formatPath(runDir, "konnectivity-server"),
 		KubeletAuthConfigPath:      formatPath(dataDir, "kubelet.conf"),
 		KubeletBootstrapConfigPath: formatPath(dataDir, "kubelet-bootstrap.conf"),
