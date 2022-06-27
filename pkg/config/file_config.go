@@ -83,7 +83,7 @@ func (rules *ClientConfigLoadingRules) ParseRuntimeConfig() (*v1beta1.ClusterCon
 		}
 		defer f.Close()
 
-		cfg, err = v1beta1.ConfigFromReader(f, storage)
+		cfg, err = v1beta1.ConfigFromReader(f, storage) //见于这个pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go中的定义
 		if err != nil {
 			return nil, err
 		}
