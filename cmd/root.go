@@ -57,7 +57,7 @@ func NewRootCmd() *cobra.Command {
 		Use:   "k0s",
 		Short: "k0s - Zero Friction Kubernetes",
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
-			c := cliOpts(config.GetCmdOpts())
+			c := cliOpts(config.GetCmdOpts())  //config中的cli.go的方法
 
 			if c.Verbose {
 				logrus.SetLevel(logrus.InfoLevel)
