@@ -234,7 +234,7 @@ func GetCmdOpts() CLIOptions {
 		K0sVars:          K0sVars,
 		DebugListenOn:    DebugListenOn,
 	}
-	return opts
+	return opts    //返回命令行选项
 }
 
 // CallParentPersistentPreRun runs the parent command's persistent pre-run.
