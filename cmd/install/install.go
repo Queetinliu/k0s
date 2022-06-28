@@ -40,7 +40,7 @@ func NewInstallCmd() *cobra.Command {
 		Short: "Install k0s on a brand-new system. Must be run as root (or with sudo)",
 	}
 
-	cmd.AddCommand(installControllerCmd())
+	cmd.AddCommand(installControllerCmd())  //这里增加了子命令
 	cmd.AddCommand(installWorkerCmd())
 	cmd.PersistentFlags().AddFlagSet(getInstallFlags())
 	cmd.PersistentFlags().AddFlagSet(config.GetPersistentFlagSet())
