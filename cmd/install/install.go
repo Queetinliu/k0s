@@ -59,7 +59,7 @@ func getInstallFlags() *pflag.FlagSet {
 // the setup functions:
 // * Ensures that the proper users are created
 // * sets up startup and logging for k0s
-func (c *CmdOpts) setup(role string, args []string, envVars []string, force bool) error {
+func (c *CmdOpts) setup(role string, args []string, envVars []string, force bool) error {  //引用service包，将go程序作为服务运行
 	if os.Geteuid() != 0 {
 		return fmt.Errorf("this command must be run as root")
 	}
