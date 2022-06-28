@@ -65,7 +65,7 @@ func (rules *ClientConfigLoadingRules) fetchNodeConfig() (*v1beta1.ClusterConfig
 		logrus.Errorf("failed to read config from file: %v", err)
 		return nil, err
 	}
-	return cfg.GetBootstrappingConfig(cfg.Spec.Storage), nil 
+	return cfg.GetBootstrappingConfig(cfg.Spec.Storage), nil   //pkg/apis/k0s.k0sproject.io/v1beta1/clusterconfig_types.go，获取启动配置
 }
 
 // when API config is enabled, but only node config is needed (for bootstrapping commands)
