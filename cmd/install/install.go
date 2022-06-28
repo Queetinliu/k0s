@@ -42,7 +42,7 @@ func NewInstallCmd() *cobra.Command {
 
 	cmd.AddCommand(installControllerCmd())  //这里增加了子命令
 	cmd.AddCommand(installWorkerCmd())
-	cmd.PersistentFlags().AddFlagSet(getInstallFlags())
+	cmd.PersistentFlags().AddFlagSet(getInstallFlags())   //增加各种标志
 	cmd.PersistentFlags().AddFlagSet(config.GetPersistentFlagSet())
 	return cmd
 }
