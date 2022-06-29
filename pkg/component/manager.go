@@ -67,7 +67,7 @@ func (m *Manager) Init(ctx context.Context) error {
 		c := comp
 		// init this async
 		g.Go(func() error {
-			return c.Init(ctx)
+			return c.Init(ctx)  //具体的实现见pkg/component/controller下
 		})
 	}
 	err := g.Wait()
