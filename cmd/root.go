@@ -77,7 +77,7 @@ func NewRootCmd() *cobra.Command {
 			}
 		},
 	}
-
+    //增加了各种命令，这里着重看下install的命令
 	cmd.AddCommand(airgap.NewAirgapCmd())
 	cmd.AddCommand(api.NewAPICmd())
 	cmd.AddCommand(backup.NewBackupCmd())
