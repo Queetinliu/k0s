@@ -39,7 +39,7 @@ func init() {
 
 func main() {
 	// Make embedded commands work through symlinks such as /usr/local/bin/kubectl (or k0s-kubectl)
-	progN := strings.TrimPrefix(path.Base(os.Args[0]), "k0s-")
+	progN := strings.TrimPrefix(path.Base(os.Args[0]), "k0s-") //如果命令行以k0s-开头进行处理
 	switch progN {
 	case "kubectl", "ctr":
 		os.Args = append([]string{"k0s", progN}, os.Args[1:]...)

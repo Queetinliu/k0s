@@ -148,13 +148,13 @@ type CfgVars struct {
 }
 
 // GetConfig returns the pointer to a Config struct
-func GetConfig(dataDir string) CfgVars {
+func GetConfig(dataDir string) CfgVars { //也可以在之前通过flag去指定这个参数
 	if dataDir == "" {
 		switch runtime.GOOS {      //根据不同的系统，定义不同的目录
 		case "windows":
 			dataDir = WinDataDirDefault
 		default:
-			dataDir = DataDirDefault  //这个常量定义在constant/constant_posix.go 中
+			dataDir = DataDirDefault  //这个常量定义在constant/constant_posix.go 中，注意使用了build tag，因而变量不会重复
 		}
 	}
 
@@ -175,7 +175,7 @@ func GetConfig(dataDir string) CfgVars {
 	winCertDir := WinDataDirDefault + "\\pki" // hacky but we need it to be windows style even on linux machine
 	helmHome := formatPath(dataDir, "helmhome")
        //返回配置参数
-	//formatPath同样见于pkg/constant/constant_posix.go和pkg/constant/constant_windos.go定义
+	//formatPath同样见于pkg/constant/constant_posix.go和pkg/constant/constant_windos.go定义，使用了build tag变量不会重复
 	return CfgVars{
 		AdminKubeConfigPath:        formatPath(certDir, "admin.conf"),
 		BinDir:                     formatPath(dataDir, "bin"),

@@ -46,7 +46,7 @@ With the controller subcommand you can setup a single node cluster by running:
 			}
 			return nil
 		},
-		PreRunE: func(c *cobra.Command, args []string) error {   
+		PreRunE: func(c *cobra.Command, args []string) error {    //先执行这个，获取配置并验证配置，还需注意下面的flag
 			cmdOpts := CmdOpts(config.GetCmdOpts())
 			return config.PreRunValidateConfig(cmdOpts.K0sVars)
 		},
